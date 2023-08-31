@@ -12,19 +12,22 @@
  *
  * Return: Pointer to the new node, or NULL on failure
  */
+
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
+binary_tree_t *new_Node;
 
-binary_tree_t *new_node = malloc(sizeof(binary_tree_t));
-if (new_node == NULL)
+new_Node = (binary_tree_t *)malloc(sizeof(binary_tree_t));        
+
+if (new_Node == NULL)
 {
-return (NULL);/* Return NULL on memory allocation failure*/
+return (NULL);
 }
 
-new_node->n = value;
-new_node->parent = parent;
-new_node->left = NULL;
-new_node->right = NULL;
+new_Node->parent = parent;
+new_Node->n = value;
+new_Node->left = NULL;
+new_Node->right = NULL;
 
-return (new_node);
+return (new_Node);
 }
